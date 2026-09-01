@@ -1,0 +1,64 @@
+﻿========================================================================
+A. WORKSPACES ORFAOS
+========================================================================
+workspace    orfao     USD total  meses  mix de servico
+ws-0122      SIM        71631.51     30  compute=56%, storage=22%, egress=12%, ai_tokens=9%
+ws-0128      SIM        69308.99     30  compute=55%, storage=22%, egress=13%, ai_tokens=10%
+ws-0121      SIM        64060.06     30  compute=56%, storage=22%, egress=13%, ai_tokens=9%
+ws-0124      SIM        53785.16     30  compute=56%, storage=22%, egress=12%, ai_tokens=9%
+ws-0133      SIM        51407.25     30  compute=57%, storage=21%, egress=12%, ai_tokens=10%
+ws-0126      SIM        46066.52     30  compute=56%, storage=22%, egress=12%, ai_tokens=9%
+ws-0131      SIM        45169.81     30  compute=55%, storage=22%, egress=13%, ai_tokens=10%
+ws-0099      -          43261.09     30  compute=57%, storage=22%, egress=12%, ai_tokens=9%
+ws-0112      -          42144.38     30  compute=55%, storage=23%, egress=13%, ai_tokens=9%
+ws-0001      SIM        37396.70     30  compute=57%, storage=22%, egress=13%, ai_tokens=9%
+ws-0002      -          34520.43     17  compute=50%, storage=23%, ai_tokens=14%, egress=12%
+ws-0007      -          33446.19     17  compute=52%, storage=22%, ai_tokens=13%, egress=13%
+ws-0017      -          32120.19     30  compute=56%, storage=22%, egress=13%, ai_tokens=9%
+ws-0102      -          30992.70     30  compute=55%, storage=23%, egress=13%, ai_tokens=10%
+ws-0127      SIM        30163.63     30  compute=56%, storage=22%, egress=12%, ai_tokens=10%
+ws-0135      SIM        30061.67     30  compute=56%, storage=22%, egress=13%, ai_tokens=9%
+ws-0077      -          27297.67     15  compute=52%, storage=23%, ai_tokens=13%, egress=12%
+ws-0043      -          24734.58     26  compute=55%, storage=22%, egress=13%, ai_tokens=10%
+ws-0034      -          22995.11     30  compute=57%, storage=22%, egress=13%, ai_tokens=8%
+ws-0130      SIM        19090.92     30  compute=56%, storage=21%, egress=13%, ai_tokens=9%
+
+custo medio por workspace:
+  orfaos  : n= 27 soma=   635100.12 media=  23522.23
+  mapeados: n=105 soma=   620427.93 media=   5908.84
+  razao de custo medio orfao/mapeado: 3.98x
+
+numeracao dos orfaos vs mapeados (ha padrao de faixa?):
+  orfaos : ['ws-0001', 'ws-0021', 'ws-0022', 'ws-0023', 'ws-0035', 'ws-0042', 'ws-0055', 'ws-0072', 'ws-0079', 'ws-0090', 'ws-0100', 'ws-0108', 'ws-0121', 'ws-0122', 'ws-0123', 'ws-0124', 'ws-0125', 'ws-0126', 'ws-0127', 'ws-0128', 'ws-0129', 'ws-0130', 'ws-0131', 'ws-0132', 'ws-0133', 'ws-0134', 'ws-0135']
+  mapeados (primeiros 15): ['ws-0002', 'ws-0003', 'ws-0004', 'ws-0005', 'ws-0006', 'ws-0007', 'ws-0008', 'ws-0009', 'ws-0010', 'ws-0011', 'ws-0012', 'ws-0013', 'ws-0014', 'ws-0015', 'ws-0016']
+  ws no map sem custo: ['ws-0113', 'ws-0114', 'ws-0115']
+
+mix de servico agregado:
+  ORFAOS    compute=56.0%, storage=22.0%, egress=12.5%, ai_tokens=9.5%
+  MAPEADOS  compute=54.2%, storage=22.4%, egress=12.4%, ai_tokens=11.0%
+
+cobertura temporal: orfaos aparecem em todos os 30 meses?
+  meses distintos por orfao: Counter({30: 20, 5: 3, 2: 1, 28: 1, 4: 1, 12: 1})
+  meses distintos por mapeado: Counter({30: 50, 5: 6, 2: 6, 4: 5, 14: 5, 9: 5, 12: 4, 3: 3, 15: 2, 19: 2, 23: 2, 7: 2, 11: 2, 8: 2, 17: 2, 24: 1, 21: 1, 27: 1, 10: 1, 26: 1, 29: 1, 16: 1})
+
+registros com custo negativo (credito de cloud):
+    {'month': '2025-01', 'workspace_id': 'ws-0082', 'service': 'ai_tokens', 'cost_usd': '-0.19'}
+    {'month': '2025-01', 'workspace_id': 'ws-0130', 'service': 'storage', 'cost_usd': '-25.83'}
+    {'month': '2025-08', 'workspace_id': 'ws-0028', 'service': 'compute', 'cost_usd': '-33.10'}
+    {'month': '2026-03', 'workspace_id': 'ws-0059', 'service': 'ai_tokens', 'cost_usd': '-7.25'}
+    {'month': '2024-01', 'workspace_id': 'ws-0001', 'service': 'storage', 'cost_usd': '-33.47'}
+    {'month': '2026-03', 'workspace_id': 'ws-0005', 'service': 'compute', 'cost_usd': '-3.68'}
+
+chaves duplicadas (month,ws,service):
+    ('2025-02', 'ws-0094', 'compute') x 2 -> ['26.68', '26.68']
+    ('2025-07', 'ws-0005', 'storage') x 2 -> ['3.39', '3.39']
+    ('2025-02', 'ws-0005', 'compute') x 2 -> ['10.93', '10.93']
+    ('2025-08', 'ws-0016', 'storage') x 2 -> ['12.65', '12.65']
+
+========================================================================
+B. API BCB SGS SERIE 1 (dolar comercial venda)
+========================================================================
+OK  https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json&dataInicial=01/01/2024&dataFinal=31/01/2024
+    registros: 22 | amostra: [{'data': '02/01/2024', 'valor': '4.8916'}, {'data': '03/01/2024', 'valor': '4.9212'}, {'data': '04/01/2024', 'valor': '4.9188'}]
+OK  https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/5?formato=json
+    registros: 5 | amostra: [{'data': '25/08/2026', 'valor': '5.1490'}, {'data': '26/08/2026', 'valor': '5.1604'}, {'data': '27/08/2026', 'valor': '5.1642'}]

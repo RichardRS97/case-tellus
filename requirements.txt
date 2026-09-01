@@ -1,0 +1,10 @@
+# Engine analitica local, em arquivo, sem servidor. Escolhida pelo volume do
+# problema (13 mil linhas) e para manter "um comando roda tudo" em qualquer maquina.
+duckdb>=1.0.0
+
+# Usado apenas como ponte de tipos na ingestao bronze e no carregamento de seeds.
+# A transformacao acontece em SQL, nao em DataFrame.
+pandas>=2.0.0
+
+# Extracao de cambio e leitura do SQLite de origem usam apenas biblioteca padrao
+# (urllib, sqlite3, csv, json), para que o pipeline rode offline apos o cache de FX.

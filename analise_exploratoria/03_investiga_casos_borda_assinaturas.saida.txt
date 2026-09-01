@@ -1,0 +1,53 @@
+﻿=== subscription_id duplicados: as duas linhas sao identicas? ===
+
+SUB00070  identicas=True
+    {'customer_id': 'CUST0040', 'plan': 'Enterprise ', 'seats': 74, 'unit_price': 349.0, 'currency': 'BRL', 'billing_period': 'monthly', 'start_date': '2023-01-25', 'end_date': '2025-03-31', 'status': 'downgraded'}
+    {'customer_id': 'CUST0040', 'plan': 'Enterprise ', 'seats': 74, 'unit_price': 349.0, 'currency': 'BRL', 'billing_period': 'monthly', 'start_date': '2023-01-25', 'end_date': '2025-03-31', 'status': 'downgraded'}
+
+SUB00186  identicas=True
+    {'customer_id': 'CUST0088', 'plan': 'enterprise', 'seats': 25, 'unit_price': 69.0, 'currency': 'USD', 'billing_period': 'monthly', 'start_date': '2026-01-20', 'end_date': None, 'status': 'active'}
+    {'customer_id': 'CUST0088', 'plan': 'enterprise', 'seats': 25, 'unit_price': 69.0, 'currency': 'USD', 'billing_period': 'monthly', 'start_date': '2026-01-20', 'end_date': None, 'status': 'active'}
+
+SUB00004  identicas=True
+    {'customer_id': 'CUST0001', 'plan': 'GROWTH', 'seats': 73, 'unit_price': 189.0, 'currency': 'BRL', 'billing_period': 'annual', 'start_date': '2024-08-15', 'end_date': '2025-11-21', 'status': 'upgraded'}
+    {'customer_id': 'CUST0001', 'plan': 'GROWTH', 'seats': 73, 'unit_price': 189.0, 'currency': 'BRL', 'billing_period': 'annual', 'start_date': '2024-08-15', 'end_date': '2025-11-21', 'status': 'upgraded'}
+
+SUB00081  identicas=True
+    {'customer_id': 'CUST0045', 'plan': 'Growth', 'seats': 56, 'unit_price': 189.0, 'currency': 'BRL', 'billing_period': 'annual', 'start_date': '2025-03-08', 'end_date': '2026-03-07', 'status': 'canceled'}
+    {'customer_id': 'CUST0045', 'plan': 'Growth', 'seats': 56, 'unit_price': 189.0, 'currency': 'BRL', 'billing_period': 'annual', 'start_date': '2025-03-08', 'end_date': '2026-03-07', 'status': 'canceled'}
+
+SUB00080  identicas=True
+    {'customer_id': 'CUST0045', 'plan': 'Growth', 'seats': 44, 'unit_price': 189.0, 'currency': 'BRL', 'billing_period': 'annual', 'start_date': '2024-12-09', 'end_date': '2025-03-07', 'status': 'upgraded'}
+    {'customer_id': 'CUST0045', 'plan': 'Growth', 'seats': 44, 'unit_price': 189.0, 'currency': 'BRL', 'billing_period': 'annual', 'start_date': '2024-12-09', 'end_date': '2025-03-07', 'status': 'upgraded'}
+
+SUB00167  identicas=True
+    {'customer_id': 'CUST0082', 'plan': 'Ent', 'seats': 135, 'unit_price': 349.0, 'currency': 'BRL', 'billing_period': 'annual', 'start_date': '2023-04-01', 'end_date': '2025-03-31', 'status': 'canceled'}
+    {'customer_id': 'CUST0082', 'plan': 'Ent', 'seats': 135, 'unit_price': 349.0, 'currency': 'BRL', 'billing_period': 'annual', 'start_date': '2023-04-01', 'end_date': '2025-03-31', 'status': 'canceled'}
+
+=== end_date < start_date ===
+    {'subscription_id': 'SUB00161', 'customer_id': 'CUST0079', 'plan': 'Growth', 'seats': 22, 'start_date': '2024-09-19', 'end_date': '2024-09-05', 'canceled_at': None, 'status': 'downgraded'}
+    {'subscription_id': 'SUB00147', 'customer_id': 'CUST0072', 'plan': 'Growth ', 'seats': 25, 'start_date': '2022-10-06', 'end_date': '2022-09-18', 'canceled_at': None, 'status': 'upgraded'}
+    {'subscription_id': 'SUB00052', 'customer_id': 'CUST0030', 'plan': 'Enterprise ', 'seats': 75, 'start_date': '2024-02-03', 'end_date': '2024-01-02', 'canceled_at': '2024-03-15', 'status': 'canceled'}
+    {'subscription_id': 'SUB00086', 'customer_id': 'CUST0048', 'plan': 'growth', 'seats': 29, 'start_date': '2024-03-01', 'end_date': '2024-02-17', 'canceled_at': None, 'status': 'upgraded'}
+    {'subscription_id': 'SUB00001', 'customer_id': 'CUST0001', 'plan': 'Ent', 'seats': 134, 'start_date': '2022-07-03', 'end_date': '2022-06-02', 'canceled_at': None, 'status': 'upgraded'}
+
+=== seats nulo/zero/texto ===
+    {'subscription_id': 'SUB00007', 'customer_id': 'CUST0002', 'plan': 'Enterprise', 'seats': 0, 'unit_price': 349.0, 'start_date': '2025-06-14', 'end_date': None, 'status': 'active'}
+    {'subscription_id': 'SUB00170', 'customer_id': 'CUST0084', 'plan': 'ENTERPRISE', 'seats': 0, 'unit_price': 69.0, 'start_date': '2023-08-04', 'end_date': '2025-08-14', 'status': 'upgraded'}
+    {'subscription_id': 'SUB00123', 'customer_id': 'CUST0064', 'plan': 'Enterprise ', 'seats': 0, 'unit_price': 349.0, 'start_date': '2023-04-13', 'end_date': None, 'status': 'active'}
+
+=== billing_period nulo ===
+    {'subscription_id': 'SUB00182', 'customer_id': 'CUST0087', 'plan': 'enterprise', 'seats': 35, 'unit_price': 69.0, 'currency': 'USD', 'billing_period': None, 'start_date': '2024-11-17', 'status': 'upgraded'}
+    {'subscription_id': 'SUB00120', 'customer_id': 'CUST0062', 'plan': 'Ent', 'seats': 37, 'unit_price': 349.0, 'currency': 'BRL', 'billing_period': None, 'start_date': '2025-11-08', 'status': 'active'}
+    {'subscription_id': 'SUB00057', 'customer_id': 'CUST0034', 'plan': 'Growth ', 'seats': 21, 'unit_price': 189.0, 'currency': 'BRL', 'billing_period': None, 'start_date': '2023-11-01', 'status': 'upgraded'}
+    {'subscription_id': 'SUB00055', 'customer_id': 'CUST0033', 'plan': 'GROWTH', 'seats': 45, 'unit_price': 189.0, 'currency': 'BRL', 'billing_period': None, 'start_date': '2025-09-03', 'status': 'active'}
+
+=== sobreposicao de vigencia no mesmo cliente ===
+   CUST0040: SUB00070 [2023-01-25..2025-03-31] status=downgraded  SOBREPOE  SUB00070 [2023-01-25..2025-03-31]
+   CUST0001: SUB00004 [2024-08-15..2025-11-21] status=upgraded  SOBREPOE  SUB00004 [2024-08-15..2025-11-21]
+   CUST0045: SUB00080 [2024-12-09..2025-03-07] status=upgraded  SOBREPOE  SUB00080 [2024-12-09..2025-03-07]
+   CUST0045: SUB00081 [2025-03-08..2026-03-07] status=canceled  SOBREPOE  SUB00081 [2025-03-08..2026-03-07]
+   CUST0082: SUB00167 [2023-04-01..2025-03-31] status=canceled  SOBREPOE  SUB00167 [2023-04-01..2025-03-31]
+
+=== consistencia: unit_price fora do preco de tabela do plano/moeda ===
+   total fora de tabela: 0
